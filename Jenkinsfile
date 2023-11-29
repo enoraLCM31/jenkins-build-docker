@@ -13,7 +13,7 @@ node {
     }
 
     stage('Run image') {
-        docker.image('srv-web-enora').withRun('-p 800:80 --name srv_web-enora' ) { c ->
+        docker.image('srv-web-enora').withRun('-p 8054:80 --name srv_web-enora' ) { c ->
 
         sh 'docker ps | grep srv_web-enora'
 	}
