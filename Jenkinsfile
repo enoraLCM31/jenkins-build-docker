@@ -2,7 +2,7 @@
 node {
 
   
-   def IMAGE="srv-web"
+   def IMAGE="srv-web-enora"
 	
     stage('Clone') {
           checkout scm
@@ -13,9 +13,9 @@ node {
     }
 
     stage('Run image') {
-        docker.image('srv-web').withRun('-p 800:80 --name srv_web' ) { c ->
+        docker.image('srv-web-enora').withRun('-p 800:80 --name srv_web-enora' ) { c ->
 
-        sh 'docker ps | grep srv_web'
+        sh 'docker ps | grep srv_web-enora'
 	}
 
     }
